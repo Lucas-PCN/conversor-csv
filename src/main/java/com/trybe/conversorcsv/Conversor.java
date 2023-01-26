@@ -1,10 +1,10 @@
 package com.trybe.conversorcsv;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.FileReader;
-import java.io.BufferedWriter;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -51,6 +51,9 @@ public class Conversor {
     }
   }
 
+  /**
+   * Método para alterar o arquivo em saída.
+   */
   public static void alterarArquivo(File arquivoEmEntrada, File arquivoEmSaida) throws IOException {
     if (arquivoEmEntrada.exists()) {
       FileReader fileReader = new FileReader(arquivoEmEntrada);
@@ -88,12 +91,18 @@ public class Conversor {
     }
   }
 
+  /**
+   * Método para alterar a data.
+   */
   public static String alterarData(String data) {
     String[] partes = data.split("/");
     String dataAlterada = partes[2] + "-" + partes[1] + "-" + partes[0];
     return dataAlterada;
   }
 
+  /**
+   * Método para alterar o cpf.
+   */
   public static String alterarCpf(String cpf) {
     StringBuilder cpfAlterado = new StringBuilder(cpf);
     cpfAlterado.insert(3, ".");
